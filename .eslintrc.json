@@ -34,6 +34,9 @@
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "import/prefer-default-export": "off",
-    "implicit-arrow-linebreak": "off"
+    "implicit-arrow-linebreak": "off",
+    "no-unused-vars": "off",
+    "no-param-reassign": "off",
+    "no-console": "off"
   }
 }
