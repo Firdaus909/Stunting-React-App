@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
+import {
+  Box, Button, Flex, Image, Text,
+} from '@chakra-ui/react';
 
-const NotFound = () => {
+function NotFound() {
   return (
     <Flex
       flexDir="column"
@@ -11,7 +13,7 @@ const NotFound = () => {
       minH="100vh"
     >
       <Image
-        width={{ base: '50vw', md: '30vw', lg:'20vw' }}
+        width={{ base: '50vw', md: '30vw', lg: '20vw' }}
         src="https://drive.google.com/uc?export=view&id=1kVPzAOr8zJPeuV277GFursOVHNX6s2K6"
         alt="Not Found Page"
       />
@@ -35,6 +37,6 @@ const NotFound = () => {
       </Box>
     </Flex>
   );
-};
+}
 
 export default NotFound;

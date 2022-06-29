@@ -11,7 +11,9 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { IconType } from 'react-icons';
-import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
+import {
+  FaFacebook, FaGithub, FaInstagram, FaTwitter,
+} from 'react-icons/fa';
 
 const socials = [
   { label: 'Twitter', href: '#', icon: FaTwitter },
@@ -26,7 +28,7 @@ interface socialButtonProps {
   href: string;
 }
 
-const SocialButton = ({ icon, label, href }: socialButtonProps) => {
+function SocialButton({ icon, label, href }: socialButtonProps) {
   return (
     <Tooltip label={label} hasArrow bg="gray.300" color="black">
       <Button
@@ -47,13 +49,13 @@ const SocialButton = ({ icon, label, href }: socialButtonProps) => {
       </Button>
     </Tooltip>
   );
-};
+}
 
-const Footer = () => {
+function Footer() {
   return (
-    <Box bg={useColorModeValue('gray.100','gray.900')}>
+    <Box bg={useColorModeValue('gray.100', 'gray.900')}>
       <Flex p={4} alignItems="center" direction={{ base: 'column', md: 'row' }}>
-        <Text textAlign='center'>© 2022 Company Name. All rights reserved</Text>
+        <Text textAlign="center">© 2022 Company Name. All rights reserved</Text>
         <Spacer />
         <HStack mt={{ base: 4, md: 0 }}>
           {socials.map((social) => (
@@ -68,6 +70,6 @@ const Footer = () => {
       </Flex>
     </Box>
   );
-};
+}
 
 export default Footer;

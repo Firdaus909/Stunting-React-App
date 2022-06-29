@@ -45,7 +45,7 @@ const linkItems: Array<linkItemProps> = [
   { label: 'Schedule', icon: FaCalendarDay, link: 'schedule' },
 ];
 
-const DesktopNav = () => {
+function DesktopNav() {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
 
@@ -69,32 +69,9 @@ const DesktopNav = () => {
       ))}
     </Flex>
   );
-};
+}
 
-const MobileNav = () => {
-  return (
-    <Stack
-      display={{ md: 'none' }}
-      spacing={2}
-      pb={2}
-    >
-      {linkItems.map((linkItem) => (
-        <MobileNavItem key={linkItem.label} {...linkItem} />
-      ))}
-
-      <Divider />
-
-      <Button variant="solid" colorScheme="blue" w="100%">
-        Sign In
-      </Button>
-      <Button variant="ghost" colorScheme="blue" w="100%">
-        Sign Up
-      </Button>
-    </Stack>
-  );
-};
-
-const MobileNavItem = ({ label, icon, link }: linkItemProps) => {
+function MobileNavItem({ label, icon, link }: linkItemProps) {
   return (
     <HStack
       as={RouterLink}
@@ -110,7 +87,26 @@ const MobileNavItem = ({ label, icon, link }: linkItemProps) => {
       <Text>{label}</Text>
     </HStack>
   );
-};
+}
+
+function MobileNav() {
+  return (
+    <Stack display={{ md: 'none' }} spacing={2} pb={2}>
+      {linkItems.map((linkItem) => (
+        <MobileNavItem key={linkItem.label} {...linkItem} />
+      ))}
+
+      <Divider />
+
+      <Button variant="solid" colorScheme="blue" w="100%">
+        Sign In
+      </Button>
+      <Button variant="ghost" colorScheme="blue" w="100%">
+        Sign Up
+      </Button>
+    </Stack>
+  );
+}
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();

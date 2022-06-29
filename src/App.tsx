@@ -10,7 +10,7 @@ import Diagnose from './pages/Diagnose';
 import Schedule from './pages/Schedule';
 import NotFound from './pages/NotFound';
 
-const AppRouter = () => {
+function AppRouter() {
   return (
     <Routes>
       <Route path="*" element={<NotFound />} />
@@ -20,12 +20,14 @@ const AppRouter = () => {
       <Route path="/schedule" element={<Schedule />} />
     </Routes>
   );
-};
+}
 
-export const App = () => (
-  <ChakraProvider theme={theme}>
-    <Navbar />
-    <AppRouter />
-    <Footer />
-  </ChakraProvider>
-);
+export function App() {
+  return (
+    <ChakraProvider theme={theme}>
+      <Navbar />
+      <AppRouter />
+      <Footer />
+    </ChakraProvider>
+  );
+}
