@@ -15,7 +15,17 @@ import {
 	Divider,
 } from '@chakra-ui/react';
 
-const index = ({ nama, jenisKelamin, umur, beratBadan, tinggiBadan, hasilBb, hasilTb }) => {
+interface ResultProps {
+	nama:string
+	jenisKelamin:string
+	umur:number
+	beratBadan:number
+	tinggiBadan:number
+	hasilBb:string
+	hasilTb:string
+}
+
+const DiagnoseResult:React.FC<ResultProps> = ({ nama, jenisKelamin, umur, beratBadan, tinggiBadan, hasilBb, hasilTb }) => {
 	// result
 	let result;
 	if (hasilBb === 'Normal' && (hasilTb === 'Normal' || hasilTb === 'Sangat Tinggi')) {
@@ -255,4 +265,4 @@ const index = ({ nama, jenisKelamin, umur, beratBadan, tinggiBadan, hasilBb, has
 	);
 };
 
-export default index;
+export default DiagnoseResult;

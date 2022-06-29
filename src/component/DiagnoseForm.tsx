@@ -1,7 +1,16 @@
 import React from 'react';
 import { Box, FormControl, FormLabel, Input, HStack, Stack, Button, Select } from '@chakra-ui/react';
 
-const index = ({
+interface FormProps {
+	handleChangeName: (e: React.ChangeEvent<HTMLInputElement>) => void
+	handleChangeJk: (e: React.ChangeEvent<HTMLSelectElement>) => void
+	handleChangeUmur: (e: React.ChangeEvent<HTMLInputElement>) => void
+	handleChangeBeratBadan: (e: React.ChangeEvent<HTMLInputElement>) => void
+	handleChangeTinggiBadan: (e: React.ChangeEvent<HTMLInputElement>) => void
+	handleSubmit: (e: React.FormEvent<HTMLFormElement>) => Promise<void>
+}
+
+const DiagnoseForm:React.FC<FormProps> = ({
 	handleChangeName,
 	handleChangeJk,
 	handleChangeUmur,
@@ -95,4 +104,4 @@ const index = ({
 	);
 };
 
-export default index;
+export default DiagnoseForm;
