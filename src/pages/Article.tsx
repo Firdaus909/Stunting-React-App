@@ -6,6 +6,10 @@ import {
   Box,
   AccordionIcon,
   AccordionPanel,
+  Flex,
+  Heading,
+  Text,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
 const Article = () => {
@@ -75,23 +79,42 @@ const Article = () => {
   ];
 
   return (
-    <Accordion allowToggle>
-      {data.map((dt) => (
-        <AccordionItem>
-          <h2>
+    <Flex
+      direction="column"
+      minH="100vh"
+      justifyContent="center"
+      alignItems="center"
+      w={{ base: '80%', md: '50%' }}
+      margin="auto"
+      mb={4}
+    >
+      <Heading my={4} fontSize={{ base: '2xl', md: '3xl' }} textAlign="center">
+        Informasi Stunting dan Gizi
+      </Heading>
+      <Accordion allowToggle>
+        {data.map((dt) => (
+          <AccordionItem>
             <AccordionButton>
-              <Box flex="1" textAlign="left">
+              <Box
+                flex="1"
+                textAlign="left"
+                fontSize={{ base: 'sm', sm: 'md' }}
+              >
                 {dt.question}
               </Box>
               <AccordionIcon />
             </AccordionButton>
-          </h2>
-          <AccordionPanel pb={4}>
-            {dt.answer}
-          </AccordionPanel>
-        </AccordionItem>
-      ))}
-    </Accordion>
+            <AccordionPanel
+              pb={4}
+              fontSize={{ base: 'sm', sm: 'md' }}
+              color={useColorModeValue('gray.600', 'gray.300')}
+            >
+              {dt.answer}
+            </AccordionPanel>
+          </AccordionItem>
+        ))}
+      </Accordion>
+    </Flex>
   );
 };
 
