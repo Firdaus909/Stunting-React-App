@@ -58,7 +58,7 @@ const DiagnoseForm: React.FC<FormProps> = ({
                   name="umur"
                   onChange={handleChangeUmur}
                   min="1"
-                  max="16"
+                  max="24"
                 />
               </FormControl>
             </Box>
