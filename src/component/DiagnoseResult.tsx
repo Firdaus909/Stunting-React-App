@@ -13,6 +13,7 @@ import {
   Heading,
   Text,
   Divider,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
 interface ResultProps {
@@ -246,111 +247,125 @@ const DiagnoseResult: React.FC<ResultProps> = ({
   }
 
   return (
-    <div>
-      <Flex mx={20}>
-        <Box flexGrow={4} me={10}>
-          <Box rounded="lg" bg="white" boxShadow="lg" flexGrow={4} mb={8}>
-            <Heading as="h3" size="lg" ps={8} py={4}>
-              Hasil
-            </Heading>
-            <Divider orientation="horizontal" />
-            <Stack spacing={4} p={8}>
-              <Heading as="h5" size="sm">
-                {result}
-              </Heading>
-            </Stack>
-          </Box>
-          <Box rounded="lg" bg="white" boxShadow="lg" flexGrow={4}>
-            <Heading as="h3" size="lg" ps={8} py={4}>
-              Rekomendasi
-            </Heading>
-            <Divider orientation="horizontal" />
-            <Stack spacing={4} p={8}>
-              {rekomendasi}
-            </Stack>
-          </Box>
-        </Box>
-
-        <Box rounded="lg" bg="white" boxShadow="lg" h="60%">
+    <Flex mx={20}>
+      <Box flexGrow={4} me={10}>
+        <Box
+          rounded="lg"
+          bg={useColorModeValue('white', 'whiteAlpha.100')}
+          boxShadow="lg"
+          flexGrow={4}
+          mb={8}
+        >
           <Heading as="h3" size="lg" ps={8} py={4}>
-            Biodata Anak
+            Hasil
           </Heading>
           <Divider orientation="horizontal" />
-          <Stack spacing={4} mb={5} p={8}>
-            <TableContainer>
-              <Table variant="striped">
-                <Tbody>
-                  <Tr>
-                    <Td>Nama Anak</Td>
-                    <Td>:</Td>
-                    <Td>
-                      <Heading as="h5" size="sm">
-                        {nama}
-                      </Heading>
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>Jenis Kelamin</Td>
-                    <Td>:</Td>
-                    <Td>
-                      <Text fontWeight="bold">{jenisKelamin}</Text>
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>Umur</Td>
-                    <Td>:</Td>
-                    <Td>
-                      <Text fontWeight="bold">
-                        {umur}
-                        {' '}
-                        bulan
-                      </Text>
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>Berat Badan</Td>
-                    <Td>:</Td>
-                    <Td>
-                      <span>
-                        <Text fontWeight="bold">
-                          {beratBadan}
-                          {' '}
-                          Kg
-                          <span>
-                            (
-                            {hasilBb}
-                            )
-                          </span>
-                        </Text>
-                      </span>
-                    </Td>
-                  </Tr>
-                  <Tr>
-                    <Td>Tinggi Badan</Td>
-                    <Td>:</Td>
-                    <Td>
-                      <span>
-                        <Text fontWeight="bold">
-                          {tinggiBadan}
-                          {' '}
-                          Cm
-                          <span>
-                            {' '}
-                            (
-                            {hasilTb}
-                            )
-                          </span>
-                        </Text>
-                      </span>
-                    </Td>
-                  </Tr>
-                </Tbody>
-              </Table>
-            </TableContainer>
+          <Stack spacing={4} p={8}>
+            <Heading as="h5" size="sm">
+              {result}
+            </Heading>
           </Stack>
         </Box>
-      </Flex>
-    </div>
+        <Box
+          rounded="lg"
+          bg={useColorModeValue('white', 'whiteAlpha.100')}
+          boxShadow="lg"
+          flexGrow={4}
+        >
+          <Heading as="h3" size="lg" ps={8} py={4}>
+            Rekomendasi
+          </Heading>
+          <Divider orientation="horizontal" />
+          <Stack spacing={4} p={8}>
+            {rekomendasi}
+          </Stack>
+        </Box>
+      </Box>
+
+      <Box
+        rounded="lg"
+        bg={useColorModeValue('white', 'whiteAlpha.100')}
+        boxShadow="lg"
+        h="60%"
+      >
+        <Heading as="h3" size="lg" ps={8} py={4}>
+          Biodata Anak
+        </Heading>
+        <Divider orientation="horizontal" />
+        <Stack spacing={4} mb={5} p={8}>
+          <TableContainer>
+            <Table variant="striped">
+              <Tbody>
+                <Tr>
+                  <Td>Nama Anak</Td>
+                  <Td>:</Td>
+                  <Td>
+                    <Heading as="h5" size="sm">
+                      {nama}
+                    </Heading>
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Jenis Kelamin</Td>
+                  <Td>:</Td>
+                  <Td>
+                    <Text fontWeight="bold">{jenisKelamin}</Text>
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Umur</Td>
+                  <Td>:</Td>
+                  <Td>
+                    <Text fontWeight="bold">
+                      {umur}
+                      {' '}
+                      bulan
+                    </Text>
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Berat Badan</Td>
+                  <Td>:</Td>
+                  <Td>
+                    <span>
+                      <Text fontWeight="bold">
+                        {beratBadan}
+                        {' '}
+                        Kg
+                        <span>
+                          (
+                          {hasilBb}
+                          )
+                        </span>
+                      </Text>
+                    </span>
+                  </Td>
+                </Tr>
+                <Tr>
+                  <Td>Tinggi Badan</Td>
+                  <Td>:</Td>
+                  <Td>
+                    <span>
+                      <Text fontWeight="bold">
+                        {tinggiBadan}
+                        {' '}
+                        Cm
+                        <span>
+                          {' '}
+                          (
+                          {hasilTb}
+                          )
+                        </span>
+                      </Text>
+                    </span>
+                  </Td>
+                </Tr>
+              </Tbody>
+            </Table>
+          </TableContainer>
+        </Stack>
+      </Box>
+    </Flex>
   );
 };
 
