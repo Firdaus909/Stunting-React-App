@@ -5,7 +5,7 @@ import {
 import DiagnoseForm from '../component/DiagnoseForm';
 import DiagnoseResult from '../component/DiagnoseResult';
 
-function Diagnose() {
+const Diagnose = () => {
   /// form
   const [question, setQuestion] = useState<boolean>(false);
   const [nama, setNama] = useState<string>('');

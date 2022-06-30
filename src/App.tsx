@@ -10,17 +10,15 @@ import Diagnose from './pages/Diagnose';
 import Schedule from './pages/Schedule';
 import NotFound from './pages/NotFound';
 
-function AppRouter() {
-  return (
-    <Routes>
-      <Route path="*" element={<NotFound />} />
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/article" element={<Article />} />
-      <Route path="/diagnose" element={<Diagnose />} />
-      <Route path="/schedule" element={<Schedule />} />
-    </Routes>
-  );
-}
+const AppRouter = () => (
+  <Routes>
+    <Route path="*" element={<NotFound />} />
+    <Route path="/" element={<LandingPage />} />
+    <Route path="/article" element={<Article />} />
+    <Route path="/diagnose" element={<Diagnose />} />
+    <Route path="/schedule" element={<Schedule />} />
+  </Routes>
+);
 
 export function App() {
   return (

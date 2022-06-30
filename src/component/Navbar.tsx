@@ -39,10 +39,10 @@ interface linkItemProps {
 }
 
 const linkItems: Array<linkItemProps> = [
-  { label: 'Home', icon: FaHome, link: '/' },
-  { label: 'Article', icon: FaNewspaper, link: 'article' },
-  { label: 'Diagnose', icon: FaStethoscope, link: 'diagnose' },
-  { label: 'Schedule', icon: FaCalendarDay, link: 'schedule' },
+  { label: 'Beranda', icon: FaHome, link: '/' },
+  { label: 'Artikel', icon: FaNewspaper, link: 'article' },
+  { label: 'Diagnosis', icon: FaStethoscope, link: 'diagnose' },
+  { label: 'Jadwal', icon: FaCalendarDay, link: 'schedule' },
 ];
 
 function DesktopNav() {
@@ -99,10 +99,10 @@ function MobileNav() {
       <Divider />
 
       <Button variant="solid" colorScheme="blue" w="100%">
-        Sign In
+        Masuk
       </Button>
       <Button variant="ghost" colorScheme="blue" w="100%">
-        Sign Up
+        Daftar
       </Button>
     </Stack>
   );
@@ -120,7 +120,7 @@ export default function Navbar() {
         bg={useColorModeValue('gray.200', 'gray.700')}
       >
         <Box>
-          <Text>Logo</Text>
+          <Text>MyStuntingApp</Text>
         </Box>
 
         <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -135,8 +135,8 @@ export default function Navbar() {
             colorScheme="blue"
             display={{ base: 'none', md: 'flex' }}
           >
-            <Button variant="solid">Sign In</Button>
-            <Button variant="ghost">Sign Up</Button>
+            <Button variant="solid">Masuk</Button>
+            <Button variant="ghost">Daftar</Button>
           </ButtonGroup>
           <IconButton
             aria-label="Toggle Navbar"
@@ -152,7 +152,7 @@ export default function Navbar() {
         <DrawerContent>
           <DrawerCloseButton />
           <DrawerHeader>
-            <Text>Logo</Text>
+            <Text>MyStuntingApp</Text>
           </DrawerHeader>
           <DrawerBody onClick={onClose}>
             <MobileNav />

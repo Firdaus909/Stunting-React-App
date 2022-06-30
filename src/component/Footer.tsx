@@ -55,7 +55,7 @@ function Footer() {
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')}>
       <Flex p={4} alignItems="center" direction={{ base: 'column', md: 'row' }}>
-        <Text textAlign="center">© 2022 Company Name. All rights reserved</Text>
+        <Text textAlign="center">&copy; 2022 MyStuntingApp. All rights reserved</Text>
         <Spacer />
         <HStack mt={{ base: 4, md: 0 }}>
           {socials.map((social) => (

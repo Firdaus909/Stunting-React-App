@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import {
-  Box, Button, Flex, Image, Text,
-} from '@chakra-ui/react';
+import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
 
-function NotFound() {
+const NotFound = () => {
   return (
     <Flex
       flexDir="column"
@@ -19,10 +17,10 @@ function NotFound() {
       />
       <Box textAlign="center" py={2} px={6}>
         <Text fontSize="18px" mt={3} mb={2}>
-          Page Not Found
+          Halaman Tidak Ditemukan
         </Text>
         <Text color="gray.500" mb={6}>
-          The page you&apos;re looking for does not seem to exist
+          Halaman yang anda cari tampaknya tidak tersedia.
         </Text>
         <Button
           as={RouterLink}
@@ -32,11 +30,11 @@ function NotFound() {
           color="white"
           variant="solid"
         >
-          Go to Home
+          Kembali ke beranda
         </Button>
       </Box>
     </Flex>
   );
-}
+};
 
 export default NotFound;
