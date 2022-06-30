@@ -26,6 +26,7 @@ import {
   FaCalendarDay,
   FaHome,
   FaNewspaper,
+  FaNutritionix,
   FaStethoscope,
   FaTimes,
 } from 'react-icons/fa';
@@ -40,12 +41,13 @@ interface linkItemProps {
 
 const linkItems: Array<linkItemProps> = [
   { label: 'Beranda', icon: FaHome, link: '/' },
-  { label: 'Artikel', icon: FaNewspaper, link: 'article' },
   { label: 'Diagnosis', icon: FaStethoscope, link: 'diagnose' },
+  { label: 'Nutrisi', icon: FaNutritionix, link: 'nutrition' },
+  { label: 'Artikel', icon: FaNewspaper, link: 'article' },
   { label: 'Jadwal', icon: FaCalendarDay, link: 'schedule' },
 ];
 
-function DesktopNav() {
+const DesktopNav = () => {
   const linkColor = useColorModeValue('gray.600', 'gray.200');
   const linkHoverColor = useColorModeValue('gray.800', 'white');
 
@@ -69,44 +71,40 @@ function DesktopNav() {
       ))}
     </Flex>
   );
-}
+};
 
-function MobileNavItem({ label, icon, link }: linkItemProps) {
-  return (
-    <HStack
-      as={RouterLink}
-      to={link}
-      px={4}
-      py={2}
-      borderRadius="lg"
-      fontSize="lg"
-      style={{ textDecoration: 'inherit' }}
-      _hover={{ bg: useColorModeValue('blackAlpha.100', 'whiteAlpha.100') }}
-    >
-      <Icon as={icon} />
-      <Text>{label}</Text>
-    </HStack>
-  );
-}
+const MobileNavItem = ({ label, icon, link }: linkItemProps) => (
+  <HStack
+    as={RouterLink}
+    to={link}
+    px={4}
+    py={2}
+    borderRadius="lg"
+    fontSize="lg"
+    style={{ textDecoration: 'inherit' }}
+    _hover={{ bg: useColorModeValue('blackAlpha.100', 'whiteAlpha.100') }}
+  >
+    <Icon as={icon} />
+    <Text>{label}</Text>
+  </HStack>
+);
 
-function MobileNav() {
-  return (
-    <Stack display={{ md: 'none' }} spacing={2} pb={2}>
-      {linkItems.map((linkItem) => (
-        <MobileNavItem key={linkItem.label} {...linkItem} />
-      ))}
+const MobileNav = () => (
+  <Stack display={{ md: 'none' }} spacing={2} pb={2}>
+    {linkItems.map((linkItem) => (
+      <MobileNavItem key={linkItem.label} {...linkItem} />
+    ))}
 
-      <Divider />
+    <Divider />
 
-      <Button variant="solid" colorScheme="blue" w="100%">
-        Masuk
-      </Button>
-      <Button variant="ghost" colorScheme="blue" w="100%">
-        Daftar
-      </Button>
-    </Stack>
-  );
-}
+    <Button variant="solid" colorScheme="blue" w="100%">
+      Masuk
+    </Button>
+    <Button variant="ghost" colorScheme="blue" w="100%">
+      Daftar
+    </Button>
+  </Stack>
+);
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -136,7 +134,9 @@ export default function Navbar() {
             display={{ base: 'none', md: 'flex' }}
           >
             <Button variant="solid">Masuk</Button>
-            <Button variant="ghost">Daftar</Button>
+            <Button variant="ghost" display={{ base: 'none', lg: 'inline' }}>
+              Daftar
+            </Button>
           </ButtonGroup>
           <IconButton
             aria-label="Toggle Navbar"
