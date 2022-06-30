@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Schedule = () => {
-  return <div>Schedule</div>;
-};
+const Schedule = () => <div>Schedule</div>;
 
 export default Schedule;

@@ -573,6 +573,6 @@ const Diagnose = () => {
       </Flex>
     </div>
   );
-}
+};
 
 export default Diagnose;
