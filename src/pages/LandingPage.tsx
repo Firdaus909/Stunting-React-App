@@ -53,22 +53,6 @@ const LandingPage = () => {
     },
   ];
 
-  //   const trimester1 = [
-  //     { name: 'Produk Susu', pic: '' },
-  //     { name: 'Ikan Salmon', pic: '' },
-  //     { name: 'Buah Berry', pic: '' },
-  //   ];
-
-  //   const trimester2 = [
-  //     { name: 'Protein', pic: '' },
-  //     { name: 'Vitamin D', pic: '' },
-  //   ];
-
-  //   const trimester3 = [
-  //     { name: 'Buah-buahan', pic: '' },
-  //     { name: 'Gandum', pic: '' },
-  //   ];
-
   return (
     <Flex direction="column" position="relative" justifyContent="center">
       <Box
