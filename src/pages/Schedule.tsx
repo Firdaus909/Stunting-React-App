@@ -162,10 +162,15 @@ const Schedule = () => (
                         </ListItem>
                       </UnorderedList>
                     </Text>
-                    <ListItem mt={3}>Polio 3</ListItem>
+                    <ListItem mt={3}>Polio 4</ListItem>
                     <Text mt={1}>
                       Mencegah penularan penyakit Polio yang dapat menyebabkan
-                      lumpuh layuh pada tungkai dan atau lengan
+                      lumpuh layuh <br /> pada tungkai dan atau lengan
+                    </Text>
+                    <ListItem>IPV</ListItem>
+                    <Text>
+                      Mencegah penularan penyakit yang dapat menyebabkan lumpuh
+                      layuh pada tungkai dan atau lengan.
                     </Text>
                   </UnorderedList>
                 </Td>
