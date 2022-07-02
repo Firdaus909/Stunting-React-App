@@ -56,7 +56,7 @@ const DiagnoseForm: React.FC<FormProps> = ({ handleSubmit }) => (
         jk: Yup.string().required('Pilih jenis kelamin anak'),
         age: Yup.number()
           .required('Masukkan umur anak')
-          .min(1, 'Diagnosis untuk anak minimal 1 bulan')
+          .min(0, 'Diagnosis untuk anak minimal 0 bulan')
           .max(24, 'Diagnosis untuk anak maksimal 24 bulan'),
         bb: Yup.number()
           .required('Masukkan berat badan anak')

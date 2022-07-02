@@ -221,7 +221,6 @@ const DiagnoseResult: React.FC<ResultProps> = ({
         <UnorderedList>
           <ListItem>Makanan keluarga</ListItem>
           <ListItem>
-            {' '}
             Makanan yang dicincang atau dihaluskan jika diperlukan
           </ListItem>
           <ListItem>ASI</ListItem>
@@ -297,7 +296,6 @@ const DiagnoseResult: React.FC<ResultProps> = ({
                     <Td>
                       <Text fontWeight="bold">
                         {umur}
-                        {' '}
                         bulan
                       </Text>
                     </Td>
@@ -309,10 +307,8 @@ const DiagnoseResult: React.FC<ResultProps> = ({
                       <span>
                         <Text fontWeight="bold">
                           {beratBadan}
-                          {' '}
                           Kg
                           <span>
-                            {' '}
                             (
                             {hasilBb}
                             )
@@ -328,10 +324,8 @@ const DiagnoseResult: React.FC<ResultProps> = ({
                       <span>
                         <Text fontWeight="bold">
                           {tinggiBadan}
-                          {' '}
                           Cm
                           <span>
-                            {' '}
                             (
                             {hasilTb}
                             )
