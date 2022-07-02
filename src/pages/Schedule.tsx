@@ -15,34 +15,40 @@ import {
   Text,
   UnorderedList,
   ListItem,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
 const Schedule = () => (
   <Flex mx="auto" align="center" justify="center" my={5} py={5}>
-    <Box rounded="lg" bg="white" boxShadow="lg" w="70%">
+    <Box
+      rounded="lg"
+      bg={useColorModeValue('white', 'whiteAlpha.100')}
+      boxShadow="lg"
+      w={{ base: '90%', md: '70%' }}
+    >
       <Heading as="h3" size="lg" ps={2} py={4}>
         Jadwal Imunisasi
       </Heading>
       <Divider orientation="horizontal" />
 
-      <Stack spacing={4} mb={5} p={8}>
-        <TableContainer whiteSpace="normal">
+      <Stack spacing={4} mb={5} p={{ base: 4, md: 8 }}>
+        <TableContainer whiteSpace={{ base: 'nowrap', md: 'normal' }}>
           <Table variant="striped">
             <Thead>
               <Tr>
                 <Th>
-                  <Heading as="h6" size="md">
+                  <Heading size={{ base: 'sm', md: 'md' }}>
                     Umur (bulan)
                   </Heading>
                 </Th>
                 <Th>
-                  <Heading as="h6" size="md">
+                  <Heading size={{ base: 'sm', md: 'md' }}>
                     Jenis Imunisasi
                   </Heading>
                 </Th>
               </Tr>
             </Thead>
-            <Tbody>
+            <Tbody fontSize={{ base: 'sm', md: 'md' }}>
               <Tr>
                 <Td>0 bulan</Td>
                 <Td>

@@ -540,6 +540,7 @@ const Diagnose = () => {
           <Text
             fontSize={{ base: 'md', md: 'lg' }}
             color={useColorModeValue('gray.600', 'gray.300')}
+            textAlign="center"
           >
             untuk memeriksa pertumbuhan bayi anda
           </Text>
@@ -555,6 +556,7 @@ const Diagnose = () => {
             tinggiBadan={tinggiBadan}
             hasilBb={hasilBb}
             hasilTb={hasilTb}
+            setQuestion={setQuestion}
           />
         )}
       </Stack>

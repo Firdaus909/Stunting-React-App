@@ -14,6 +14,7 @@ import {
   Text,
   Divider,
   useColorModeValue,
+  Button,
 } from '@chakra-ui/react';
 
 interface ResultProps {
@@ -24,6 +25,7 @@ interface ResultProps {
   tinggiBadan: number;
   hasilBb: string;
   hasilTb: string;
+  setQuestion: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const DiagnoseResult: React.FC<ResultProps> = ({
@@ -34,6 +36,7 @@ const DiagnoseResult: React.FC<ResultProps> = ({
   tinggiBadan,
   hasilBb,
   hasilTb,
+  setQuestion,
 }) => {
   // result
   let result;
@@ -69,8 +72,8 @@ const DiagnoseResult: React.FC<ResultProps> = ({
   let rekomendasi;
   if (umur > 0 && umur <= 6) {
     rekomendasi = (
-      <div>
-        <Heading>Kebutuhan Gizi</Heading>
+      <Stack spacing={3} p={5}>
+        <Heading fontSize="2xl">Kebutuhan Gizi</Heading>
         <Text>
           Kebutuhan gizi pada bayi usia 0-6 bulan cukup terpenuhi dari ASI saja
           (ASI Eksklusif)
@@ -96,7 +99,7 @@ const DiagnoseResult: React.FC<ResultProps> = ({
           </ListItem>
         </UnorderedList>
 
-        <Heading mt={5}>Tahap Perkembangan</Heading>
+        <Heading mt={3} fontSize="2xl">Tahap Perkembangan</Heading>
         <UnorderedList>
           <ListItem>Mengangkat kepala setinggi 45 derajat</ListItem>
           <ListItem>Menggerakkan kepala dari kiri/kanan ke tengah.</ListItem>
@@ -111,12 +114,12 @@ const DiagnoseResult: React.FC<ResultProps> = ({
             Mengenal ibu dengan penglihatan, penciuman, pendengaran, kontak
           </ListItem>
         </UnorderedList>
-      </div>
+      </Stack>
     );
   } else if (umur > 6 && umur <= 9) {
     rekomendasi = (
-      <div>
-        <Heading>Kebutuhan Gizi</Heading>
+      <Stack spacing={3} p={2}>
+        <Heading fontSize="2xl">Kebutuhan Gizi</Heading>
         <UnorderedList>
           <ListItem>
             Anak harus mulai dikenalkan dan diberi makanan pendamping ASI sejak
@@ -138,7 +141,7 @@ const DiagnoseResult: React.FC<ResultProps> = ({
           <ListItem>Mudah ditelan dan disukai anak</ListItem>
         </UnorderedList>
 
-        <Heading mt={5}>Tahap Perkembangan</Heading>
+        <Heading mt={3} fontSize="2xl">Tahap Perkembangan</Heading>
         <UnorderedList>
           <ListItem>Duduk (sikap tripoid – sendiri).</ListItem>
           <ListItem>
@@ -159,12 +162,12 @@ const DiagnoseResult: React.FC<ResultProps> = ({
           <ListItem>Mencari mainan/benda yang dijatuhkan.</ListItem>
           <ListItem>Makan cemilan sendiri.</ListItem>
         </UnorderedList>
-      </div>
+      </Stack>
     );
   } else if (umur > 9 && umur <= 12) {
     rekomendasi = (
-      <div>
-        <Heading>Kebutuhan Gizi</Heading>
+      <Stack spacing={3} p={2}>
+        <Heading fontSize="2xl">Kebutuhan Gizi</Heading>
         <UnorderedList>
           <ListItem>
             ASI tetap diberikan, kemudian Makanan Pendamping (MP) ASI
@@ -187,7 +190,7 @@ const DiagnoseResult: React.FC<ResultProps> = ({
           </ListItem>
         </UnorderedList>
 
-        <Heading mt={5}>Tahap Perkembangan</Heading>
+        <Heading mt={3} fontSize="2xl">Tahap Perkembangan</Heading>
         <UnorderedList>
           <ListItem>Mengangkat badannya ke posisi berdiri.</ListItem>
           <ListItem>
@@ -209,11 +212,11 @@ const DiagnoseResult: React.FC<ResultProps> = ({
           <ListItem>Senang diajak bermain ”CILUK BA”</ListItem>
           <ListItem>Mengenal anggota keluarga.</ListItem>
         </UnorderedList>
-      </div>
+      </Stack>
     );
   } else {
     rekomendasi = (
-      <div>
+      <Stack spacing={4} p={8}>
         <Heading>Kebutuhan Gizi</Heading>
         <UnorderedList>
           <ListItem>Makanan keluarga</ListItem>
@@ -242,130 +245,231 @@ const DiagnoseResult: React.FC<ResultProps> = ({
           </ListItem>
           <ListItem>Memperlihatkan rasa cemburu / bersaing</ListItem>
         </UnorderedList>
-      </div>
+      </Stack>
     );
   }
 
   return (
-    <Flex mx={20}>
-      <Box flexGrow={4} me={10}>
-        <Box
-          rounded="lg"
-          bg={useColorModeValue('white', 'whiteAlpha.100')}
-          boxShadow="lg"
-          flexGrow={4}
-          mb={8}
-        >
-          <Heading as="h3" size="lg" ps={8} py={4}>
-            Hasil
-          </Heading>
-          <Divider orientation="horizontal" />
-          <Stack spacing={4} p={8}>
-            <Heading as="h5" size="sm">
+    <Flex direction={{ base: 'column', md: 'row' }} w="100%" p={5} gap={8}>
+      <Flex direction="column" gap={5} w={{ base: '100%', md: '60%' }}>
+        <Box boxShadow="lg" rounded="lg" p={4} bg={useColorModeValue('white', 'whiteAlpha.100')}>
+          <Flex direction="column">
+            <Heading>Hasil</Heading>
+            <Divider orientation="horizontal" />
+            <Heading fontSize="md" p={4}>
               {result}
             </Heading>
-          </Stack>
+          </Flex>
         </Box>
-        <Box
-          rounded="lg"
-          bg={useColorModeValue('white', 'whiteAlpha.100')}
-          boxShadow="lg"
-          flexGrow={4}
-        >
-          <Heading as="h3" size="lg" ps={8} py={4}>
-            Rekomendasi
-          </Heading>
-          <Divider orientation="horizontal" />
-          <Stack spacing={4} p={8}>
+        <Box boxShadow="lg" rounded="lg" p={4} bg={useColorModeValue('white', 'whiteAlpha.100')}>
+          <Flex direction="column">
+            <Heading>Rekomendasi</Heading>
+            <Divider orientation="horizontal" />
             {rekomendasi}
-          </Stack>
+          </Flex>
         </Box>
-      </Box>
-
-      <Box
-        rounded="lg"
-        bg={useColorModeValue('white', 'whiteAlpha.100')}
-        boxShadow="lg"
-        h="60%"
-      >
-        <Heading as="h3" size="lg" ps={8} py={4}>
-          Biodata Anak
-        </Heading>
-        <Divider orientation="horizontal" />
-        <Stack spacing={4} mb={5} p={8}>
-          <TableContainer>
-            <Table variant="striped">
-              <Tbody>
-                <Tr>
-                  <Td>Nama Anak</Td>
-                  <Td>:</Td>
-                  <Td>
-                    <Heading as="h5" size="sm">
-                      {nama}
-                    </Heading>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>Jenis Kelamin</Td>
-                  <Td>:</Td>
-                  <Td>
-                    <Text fontWeight="bold">{jenisKelamin}</Text>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>Umur</Td>
-                  <Td>:</Td>
-                  <Td>
-                    <Text fontWeight="bold">
-                      {umur}
-                      {' '}
-                      bulan
-                    </Text>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>Berat Badan</Td>
-                  <Td>:</Td>
-                  <Td>
-                    <span>
+      </Flex>
+      <Flex direction="column" gap={5} w={{ base: '100%', md: '40%' }}>
+        <Box boxShadow="lg" rounded="lg" p={4} bg={useColorModeValue('white', 'whiteAlpha.100')}>
+          <Flex direction="column">
+            <Heading>Biodata</Heading>
+            <Divider orientation="horizontal" />
+            <TableContainer whiteSpace="normal" mt={3}>
+              <Table variant="striped">
+                <Tbody>
+                  <Tr>
+                    <Td>Nama Anak</Td>
+                    <Td>:</Td>
+                    <Td>
+                      <Text fontWeight="bold">{nama}</Text>
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>Jenis Kelamin</Td>
+                    <Td>:</Td>
+                    <Td>
+                      <Text fontWeight="bold">{jenisKelamin}</Text>
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>Umur</Td>
+                    <Td>:</Td>
+                    <Td>
                       <Text fontWeight="bold">
-                        {beratBadan}
+                        {umur}
                         {' '}
-                        Kg
-                        <span>
-                          (
-                          {hasilBb}
-                          )
-                        </span>
+                        bulan
                       </Text>
-                    </span>
-                  </Td>
-                </Tr>
-                <Tr>
-                  <Td>Tinggi Badan</Td>
-                  <Td>:</Td>
-                  <Td>
-                    <span>
-                      <Text fontWeight="bold">
-                        {tinggiBadan}
-                        {' '}
-                        Cm
-                        <span>
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>Berat Badan</Td>
+                    <Td>:</Td>
+                    <Td>
+                      <span>
+                        <Text fontWeight="bold">
+                          {beratBadan}
                           {' '}
-                          (
-                          {hasilTb}
-                          )
-                        </span>
-                      </Text>
-                    </span>
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </TableContainer>
-        </Stack>
-      </Box>
+                          Kg
+                          <span>
+                            {' '}
+                            (
+                            {hasilBb}
+                            )
+                          </span>
+                        </Text>
+                      </span>
+                    </Td>
+                  </Tr>
+                  <Tr>
+                    <Td>Tinggi Badan</Td>
+                    <Td>:</Td>
+                    <Td>
+                      <span>
+                        <Text fontWeight="bold">
+                          {tinggiBadan}
+                          {' '}
+                          Cm
+                          <span>
+                            {' '}
+                            (
+                            {hasilTb}
+                            )
+                          </span>
+                        </Text>
+                      </span>
+                    </Td>
+                  </Tr>
+                </Tbody>
+              </Table>
+            </TableContainer>
+          </Flex>
+        </Box>
+        <Box>
+          <Flex direction="column" alignItems="center" gap={3} mt={5}>
+            <Text>Ingin melakukan diagnosis lagi?</Text>
+            <Button onClick={() => setQuestion(false)}>Diagnosis</Button>
+          </Flex>
+        </Box>
+      </Flex>
     </Flex>
+    // <Flex direction={{ base: 'column', md: 'row' }} gap={10}>
+    //   <Flex direction="column">
+    //     <Flex
+    //       direction="column"
+    //       rounded="lg"
+    //       bg={useColorModeValue('white', 'whiteAlpha.100')}
+    //       boxShadow="lg"
+    //       mb={8}
+    //     >
+    //       <Heading as="h3" size="lg" ps={8} py={4}>
+    //         Hasil
+    //       </Heading>
+    //       <Divider orientation="horizontal" />
+    //       <Heading fontSize="md" p={4}>
+    //         {result}
+    //       </Heading>
+    //     </Flex>
+    //     <Box
+    //       rounded="lg"
+    //       bg={useColorModeValue('white', 'whiteAlpha.100')}
+    //       boxShadow="lg"
+    //       flexGrow={4}
+    //     >
+    //       <Heading as="h3" size="lg" ps={8} py={4}>
+    //         Rekomendasi
+    //       </Heading>
+    //       <Divider orientation="horizontal" />
+    //       <Stack spacing={4} p={8}>
+    //         {rekomendasi}
+    //       </Stack>
+    //     </Box>
+    //   </Flex>
+
+  //   <Box
+  //     rounded="lg"
+  //     bg={useColorModeValue('white', 'whiteAlpha.100')}
+  //     boxShadow="lg"
+  //     h="60%"
+  //   >
+  //     <Heading as="h3" size="lg" ps={8} py={4}>
+  //       Biodata Anak
+  //     </Heading>
+  // <Divider orientation="horizontal" />
+  // <Stack spacing={4} mb={5} p={8}>
+  //   <TableContainer>
+  //     <Table variant="striped">
+  //       <Tbody>
+  //         <Tr>
+  //           <Td>Nama Anak</Td>
+  //           <Td>:</Td>
+  //           <Td>
+  //             <Heading as="h5" size="sm">
+  //               {nama}
+  //             </Heading>
+  //           </Td>
+  //         </Tr>
+  //         <Tr>
+  //           <Td>Jenis Kelamin</Td>
+  //           <Td>:</Td>
+  //           <Td>
+  //             <Text fontWeight="bold">{jenisKelamin}</Text>
+  //           </Td>
+  //         </Tr>
+  //         <Tr>
+  //           <Td>Umur</Td>
+  //           <Td>:</Td>
+  //           <Td>
+  //             <Text fontWeight="bold">
+  //               {umur}
+  //               {' '}
+  //               bulan
+  //             </Text>
+  //           </Td>
+  //         </Tr>
+  //         <Tr>
+  //           <Td>Berat Badan</Td>
+  //           <Td>:</Td>
+  //           <Td>
+  //             <span>
+  //               <Text fontWeight="bold">
+  //                 {beratBadan}
+  //                 {' '}
+  //                 Kg
+  //                 <span>
+  //                   (
+  //                   {hasilBb}
+  //                   )
+  //                 </span>
+  //               </Text>
+  //             </span>
+  //           </Td>
+  //         </Tr>
+  //         <Tr>
+  //           <Td>Tinggi Badan</Td>
+  //           <Td>:</Td>
+  //           <Td>
+  //             <span>
+  //               <Text fontWeight="bold">
+  //                 {tinggiBadan}
+  //                 {' '}
+  //                 Cm
+  //                 <span>
+  //                   {' '}
+  //                   (
+  //                   {hasilTb}
+  //                   )
+  //                 </span>
+  //               </Text>
+  //             </span>
+  //           </Td>
+  //         </Tr>
+  //       </Tbody>
+  //     </Table>
+  //   </TableContainer>
+  //     </Stack>
+  //   </Box>
+  // </Flex>
   );
 };
 

@@ -13,7 +13,7 @@ import {
   VStack,
   FormErrorMessage,
 } from '@chakra-ui/react';
-import { Field, Formik, FormikHelpers as FormikActions } from 'formik';
+import { Formik, FormikHelpers as FormikActions } from 'formik';
 import * as Yup from 'yup';
 
 interface FormValues {
@@ -84,69 +84,61 @@ const DiagnoseForm: React.FC<FormProps> = ({ handleSubmit }) => (
             />
             <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
           </FormControl>
-          <Flex>
-            <Box>
-              <FormControl id="jk" isInvalid={!!formik.errors.jk}>
-                <FormLabel>Jenis Kelamin</FormLabel>
-                <Select
-                  placeholder="Select option"
-                  name="jk"
-                  value={formik.values.jk}
-                  onChange={formik.handleChange('jk')}
-                >
-                  <option id="perempuan" value="perempuan">
-                    Perempuan
-                  </option>
-                  <option id="laki-laki" value="laki-laki">
-                    Laki-laki
-                  </option>
-                </Select>
-                <FormErrorMessage>{formik.errors.jk}</FormErrorMessage>
-              </FormControl>
-            </Box>
+          <Flex w="100%" direction={{ base: 'column', sm: 'row' }} gap={{ base: 1, sm: 4 }}>
+            <FormControl id="jk" isInvalid={!!formik.errors.jk}>
+              <FormLabel>Jenis Kelamin</FormLabel>
+              <Select
+                placeholder="Select option"
+                name="jk"
+                value={formik.values.jk}
+                onChange={formik.handleChange('jk')}
+              >
+                <option id="perempuan" value="perempuan">
+                  Perempuan
+                </option>
+                <option id="laki-laki" value="laki-laki">
+                  Laki-laki
+                </option>
+              </Select>
+              <FormErrorMessage>{formik.errors.jk}</FormErrorMessage>
+            </FormControl>
             <Spacer />
-            <Box>
-              <FormControl id="umur" isInvalid={!!formik.errors.age}>
-                <FormLabel>Umur (bulan)</FormLabel>
-                <Input
-                  type="number"
-                  placeholder="10 bulan"
-                  name="age"
-                  value={formik.values.age}
-                  onChange={formik.handleChange('age')}
-                />
-                <FormErrorMessage>{formik.errors.age}</FormErrorMessage>
-              </FormControl>
-            </Box>
+            <FormControl id="umur" isInvalid={!!formik.errors.age}>
+              <FormLabel>Umur (bulan)</FormLabel>
+              <Input
+                type="number"
+                placeholder="10 bulan"
+                name="age"
+                value={formik.values.age}
+                onChange={formik.handleChange('age')}
+              />
+              <FormErrorMessage>{formik.errors.age}</FormErrorMessage>
+            </FormControl>
           </Flex>
-          <Flex>
-            <Box>
-              <FormControl id="berat" isInvalid={!!formik.errors.bb}>
-                <FormLabel>Berat Badan (Kg)</FormLabel>
-                <Input
-                  type="number"
-                  placeholder="4.3 kg"
-                  name="bb"
-                  value={formik.values.bb}
-                  onChange={formik.handleChange('bb')}
-                />
-                <FormErrorMessage>{formik.errors.bb}</FormErrorMessage>
-              </FormControl>
-            </Box>
+          <Flex w="100%" direction={{ base: 'column', sm: 'row' }} gap={{ base: 1, sm: 4 }}>
+            <FormControl id="berat" isInvalid={!!formik.errors.bb}>
+              <FormLabel>Berat Badan (Kg)</FormLabel>
+              <Input
+                type="number"
+                placeholder="4.3 kg"
+                name="bb"
+                value={formik.values.bb}
+                onChange={formik.handleChange('bb')}
+              />
+              <FormErrorMessage>{formik.errors.bb}</FormErrorMessage>
+            </FormControl>
             <Spacer />
-            <Box>
-              <FormControl id="tinggi" isInvalid={!!formik.errors.tb}>
-                <FormLabel>Tinggi Badan (Cm)</FormLabel>
-                <Input
-                  type="number"
-                  placeholder="60 cm"
-                  name="tb"
-                  value={formik.values.tb}
-                  onChange={formik.handleChange('tb')}
-                />
-                <FormErrorMessage>{formik.errors.tb}</FormErrorMessage>
-              </FormControl>
-            </Box>
+            <FormControl id="tinggi" isInvalid={!!formik.errors.tb}>
+              <FormLabel>Tinggi Badan (Cm)</FormLabel>
+              <Input
+                type="number"
+                placeholder="60 cm"
+                name="tb"
+                value={formik.values.tb}
+                onChange={formik.handleChange('tb')}
+              />
+              <FormErrorMessage>{formik.errors.tb}</FormErrorMessage>
+            </FormControl>
           </Flex>
           <Stack spacing={10} pt={2} mt={4}>
             <Button
