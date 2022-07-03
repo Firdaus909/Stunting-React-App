@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Box,
   Button,
@@ -13,6 +14,7 @@ import {
 import GlowText from '../component/GlowText';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   const cardBg = useColorModeValue('rgba(255,255,255,0.3)', 'rgba(0,0,0,0.3)');
 
   const nutrition = [
@@ -118,7 +120,11 @@ const LandingPage = () => {
           <Text mb={2} fontSize={{ base: 'sm', md: 'md' }} textAlign="center">
             Ketahui Kondisi Anak Anda Sekarang
           </Text>
-          <Button variant="solid" colorScheme="blue">
+          <Button
+            variant="solid"
+            colorScheme="blue"
+            onClick={() => navigate('/diagnose')}
+          >
             Diagnosis
           </Button>
         </Flex>
@@ -140,6 +146,7 @@ const LandingPage = () => {
         >
           {nutrition.map((nutri) => (
             <Flex
+              key={nutri.name}
               direction="column"
               alignItems="center"
               p={4}
