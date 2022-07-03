@@ -249,31 +249,41 @@ const DiagnoseResult: React.FC<ResultProps> = ({
   }
 
   return (
-    <Flex direction={{ base: 'column', md: 'row' }} w="100%" p={5} gap={8}>
+    <Flex direction={{ base: 'column', md: 'row' }} w="100%" py={5} px={10} gap={8}>
       <Flex direction="column" gap={5} w={{ base: '100%', md: '60%' }}>
-        <Box boxShadow="lg" rounded="lg" p={4} bg={useColorModeValue('white', 'whiteAlpha.100')}>
+        <Box boxShadow="lg" rounded="lg" bg={useColorModeValue('white', 'whiteAlpha.100')}>
           <Flex direction="column">
-            <Heading>Hasil</Heading>
+            <Heading ps={4} py={3}>Hasil</Heading>
             <Divider orientation="horizontal" />
-            <Heading fontSize="md" p={4}>
-              {result}
-            </Heading>
+            <Stack p={5}>
+              <Heading fontSize="md" mb={1}>
+                {result}
+              </Heading>
+              <Text as="em" fontSize="xs">
+                <Text as="em" fontSize="xs">Note:</Text>
+                <br />
+                Untuk informasi lebih lanjut, Anda dapat melakukan pemeriksaan tumbuh kembang anak
+                secara berkala ke dokter terdekat.
+              </Text>
+            </Stack>
           </Flex>
         </Box>
-        <Box boxShadow="lg" rounded="lg" p={4} bg={useColorModeValue('white', 'whiteAlpha.100')}>
+        <Box boxShadow="lg" rounded="lg" bg={useColorModeValue('white', 'whiteAlpha.100')}>
           <Flex direction="column">
-            <Heading>Rekomendasi</Heading>
+            <Heading ps={4} py={3}>Rekomendasi</Heading>
             <Divider orientation="horizontal" />
-            {rekomendasi}
+            <Stack ps={2}>
+              {rekomendasi}
+            </Stack>
           </Flex>
         </Box>
       </Flex>
       <Flex direction="column" gap={5} w={{ base: '100%', md: '40%' }}>
-        <Box boxShadow="lg" rounded="lg" p={4} bg={useColorModeValue('white', 'whiteAlpha.100')}>
+        <Box boxShadow="lg" rounded="lg" bg={useColorModeValue('white', 'whiteAlpha.100')}>
           <Flex direction="column">
-            <Heading>Biodata</Heading>
+            <Heading ps={4} py={3}>Biodata</Heading>
             <Divider orientation="horizontal" />
-            <TableContainer whiteSpace="normal" mt={3}>
+            <TableContainer whiteSpace="normal" p={6}>
               <Table variant="striped">
                 <Tbody>
                   <Tr>
