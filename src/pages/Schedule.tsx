@@ -82,24 +82,21 @@ const Schedule = () => (
                 <Td>2 bulan</Td>
                 <Td>
                   <UnorderedList>
-                    <ListItem>DPT 1 - Hepatitis B 1 - HIB 1</ListItem>
-                    <Text mt={2}>
-                      Mencegah penularan penyakit:
-                      <UnorderedList>
-                        <ListItem mt={1}>
-                          Difteri yang menyebabkan penyumbatan jalan nafas
-                        </ListItem>
-                        <ListItem mt={1}>Batuk Rejan (batuk 100 hari)</ListItem>
-                        <ListItem mt={1}>Tetanus</ListItem>
-                        <ListItem mt={1}>
-                          Hepatitis B yang menyebabkan kerusakan hati
-                        </ListItem>
-                        <ListItem mt={1}>
-                          Infeksi HIB menyebabkan meningitis (radang
-                          selaputotak)
-                        </ListItem>
-                      </UnorderedList>
-                    </Text>
+                    <ListItem mb={2}>DPT 1 - Hepatitis B 1 - HIB 1</ListItem>
+                    Mencegah penularan penyakit:
+                    <UnorderedList>
+                      <ListItem mt={1}>
+                        Difteri yang menyebabkan penyumbatan jalan nafas
+                      </ListItem>
+                      <ListItem mt={1}>Batuk Rejan (batuk 100 hari)</ListItem>
+                      <ListItem mt={1}>Tetanus</ListItem>
+                      <ListItem mt={1}>
+                        Hepatitis B yang menyebabkan kerusakan hati
+                      </ListItem>
+                      <ListItem mt={1}>
+                        Infeksi HIB menyebabkan meningitis (radang selaputotak)
+                      </ListItem>
+                    </UnorderedList>
                     <ListItem mt={3}>Polio 2</ListItem>
                     <Text mt={1}>
                       Mencegah penularan penyakit Polio yang dapat menyebabkan
@@ -113,24 +110,21 @@ const Schedule = () => (
                 <Td>3 bulan</Td>
                 <Td>
                   <UnorderedList>
-                    <ListItem>DPT2 - Hepatitis B2 - HIB 2</ListItem>
-                    <Text mt={2}>
-                      Mencegah penularan penyakit:
-                      <UnorderedList>
-                        <ListItem mt={1}>
-                          Difteri yang menyebabkan penyumbatan jalan nafas
-                        </ListItem>
-                        <ListItem mt={1}>Batuk Rejan (batuk 100 hari)</ListItem>
-                        <ListItem mt={1}>Tetanus</ListItem>
-                        <ListItem mt={1}>
-                          Hepatitis B yang menyebabkan kerusakan hati
-                        </ListItem>
-                        <ListItem mt={1}>
-                          Infeksi HIB menyebabkan meningitis (radang
-                          selaputotak)
-                        </ListItem>
-                      </UnorderedList>
-                    </Text>
+                    <ListItem mb={2}>DPT2 - Hepatitis B2 - HIB 2</ListItem>
+                    Mencegah penularan penyakit:
+                    <UnorderedList>
+                      <ListItem mt={1}>
+                        Difteri yang menyebabkan penyumbatan jalan nafas
+                      </ListItem>
+                      <ListItem mt={1}>Batuk Rejan (batuk 100 hari)</ListItem>
+                      <ListItem mt={1}>Tetanus</ListItem>
+                      <ListItem mt={1}>
+                        Hepatitis B yang menyebabkan kerusakan hati
+                      </ListItem>
+                      <ListItem mt={1}>
+                        Infeksi HIB menyebabkan meningitis (radang selaputotak)
+                      </ListItem>
+                    </UnorderedList>
                     <ListItem mt={3}>Polio 3</ListItem>
                     <Text mt={1}>
                       Mencegah penularan penyakit Polio yang dapat menyebabkan
@@ -144,24 +138,21 @@ const Schedule = () => (
                 <Td>4 bulan</Td>
                 <Td>
                   <UnorderedList>
-                    <ListItem>DPT3 - Hepatitis B3 - HIB 3</ListItem>
-                    <Text mt={2}>
-                      Mencegah penularan penyakit:
-                      <UnorderedList>
-                        <ListItem mt={1}>
-                          Difteri yang menyebabkan penyumbatan jalan nafas
-                        </ListItem>
-                        <ListItem mt={1}>Batuk Rejan (batuk 100 hari)</ListItem>
-                        <ListItem mt={1}>Tetanus</ListItem>
-                        <ListItem mt={1}>
-                          Hepatitis B yang menyebabkan kerusakan hati
-                        </ListItem>
-                        <ListItem mt={1}>
-                          Infeksi HIB menyebabkan meningitis (radang
-                          selaputotak)
-                        </ListItem>
-                      </UnorderedList>
-                    </Text>
+                    <ListItem mb={2}>DPT3 - Hepatitis B3 - HIB 3</ListItem>
+                    Mencegah penularan penyakit:
+                    <UnorderedList>
+                      <ListItem mt={1}>
+                        Difteri yang menyebabkan penyumbatan jalan nafas
+                      </ListItem>
+                      <ListItem mt={1}>Batuk Rejan (batuk 100 hari)</ListItem>
+                      <ListItem mt={1}>Tetanus</ListItem>
+                      <ListItem mt={1}>
+                        Hepatitis B yang menyebabkan kerusakan hati
+                      </ListItem>
+                      <ListItem mt={1}>
+                        Infeksi HIB menyebabkan meningitis (radang selaputotak)
+                      </ListItem>
+                    </UnorderedList>
                     <ListItem mt={3}>Polio 3</ListItem>
                     <Text mt={1}>
                       Mencegah penularan penyakit Polio yang dapat menyebabkan

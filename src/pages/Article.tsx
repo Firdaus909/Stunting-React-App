@@ -93,7 +93,7 @@ const Article = () => {
       </Heading>
       <Accordion allowToggle>
         {data.map((dt) => (
-          <AccordionItem>
+          <AccordionItem key={dt.question}>
             <AccordionButton>
               <Box
                 flex="1"

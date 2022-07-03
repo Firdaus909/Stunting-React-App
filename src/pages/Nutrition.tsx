@@ -11,7 +11,7 @@ const Nutrition = () => {
   const { food } = useAppSelector((state) => state.food);
   const common = food?.common;
   const branded = food?.branded;
-  // Buat Grid
+
   return (
     <Flex direction="column" minH="100vh" alignItems="center">
       <Heading
