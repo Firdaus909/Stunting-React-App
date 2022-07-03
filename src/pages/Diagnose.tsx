@@ -37,7 +37,17 @@ const Diagnose = () => {
     tb,
   }: FormValues) => {
     if (jk === 'perempuan') {
-      if (age === 1) {
+      if (age === 0) {
+        if (bb > 3.7) setHasilBb('Risiko Berat Badan Lebih');
+        else if (bb >= 2.4) setHasilBb('Normal');
+        else if (bb >= 2.0) setHasilBb('Kurang');
+        else setHasilBb('Sangat Kurang');
+
+        if (tb > 54.7) setHasilTb('Sangat Tinggi');
+        else if (tb >= 45.4) setHasilTb('Normal');
+        else if (tb >= 43.6) setHasilTb('Pendek');
+        else setHasilTb('Sangat Pendek');
+      } else if (age === 1) {
         if (bb > 4.8) setHasilBb('Risiko Berat Badan Lebih');
         else if (bb >= 3.2) setHasilBb('Normal');
         else if (bb >= 2.7) setHasilBb('Kurang');
@@ -279,7 +289,17 @@ const Diagnose = () => {
         else setHasilTb('Sangat Pendek');
       }
     } else if (jk === 'laki-laki') {
-      if (age === 1) {
+      if (age === 0) {
+        if (bb > 3.9) setHasilBb('Risiko Berat Badan Lebih');
+        else if (bb >= 2.5) setHasilBb('Normal');
+        else if (bb >= 2.1) setHasilBb('Kurang');
+        else setHasilBb('Sangat Kurang');
+
+        if (tb > 55.6) setHasilTb('Sangat Tinggi');
+        else if (tb >= 46.1) setHasilTb('Normal');
+        else if (tb >= 44.2) setHasilTb('Pendek');
+        else setHasilTb('Sangat Pendek');
+      } else if (age === 1) {
         if (bb > 5.1) setHasilBb('Risiko Berat Badan Lebih');
         else if (bb >= 3.4) setHasilBb('Normal');
         else if (bb >= 2.9) setHasilBb('Kurang');

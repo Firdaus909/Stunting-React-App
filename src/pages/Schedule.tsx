@@ -153,10 +153,15 @@ const Schedule = () => (
                         Infeksi HIB menyebabkan meningitis (radang selaputotak)
                       </ListItem>
                     </UnorderedList>
-                    <ListItem mt={3}>Polio 3</ListItem>
+                    <ListItem mt={3}>Polio 4</ListItem>
                     <Text mt={1}>
                       Mencegah penularan penyakit Polio yang dapat menyebabkan
                       lumpuh layuh pada tungkai dan atau lengan
+                    </Text>
+                    <ListItem mt={3}>IPV</ListItem>
+                    <Text mt={1}>
+                      Mencegah penularan penyakit yang dapat menyebabkan lumpuh
+                      layuh pada tungkai dan atau lengan.
                     </Text>
                   </UnorderedList>
                 </Td>
