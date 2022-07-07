@@ -118,7 +118,7 @@ const DiagnoseResult: React.FC<ResultProps> = ({
     );
   } else if (umur > 6 && umur <= 9) {
     rekomendasi = (
-      <Stack spacing={3} p={2}>
+      <Stack spacing={3} p={5}>
         <Heading fontSize="2xl">Kebutuhan Gizi</Heading>
         <UnorderedList>
           <ListItem>
@@ -166,7 +166,7 @@ const DiagnoseResult: React.FC<ResultProps> = ({
     );
   } else if (umur > 9 && umur <= 12) {
     rekomendasi = (
-      <Stack spacing={3} p={2}>
+      <Stack spacing={3} p={5}>
         <Heading fontSize="2xl">Kebutuhan Gizi</Heading>
         <UnorderedList>
           <ListItem>
@@ -216,7 +216,7 @@ const DiagnoseResult: React.FC<ResultProps> = ({
     );
   } else {
     rekomendasi = (
-      <Stack spacing={4} p={8}>
+      <Stack spacing={3} p={5}>
         <Heading>Kebutuhan Gizi</Heading>
         <UnorderedList>
           <ListItem>Makanan keluarga</ListItem>
@@ -226,7 +226,7 @@ const DiagnoseResult: React.FC<ResultProps> = ({
           <ListItem>ASI</ListItem>
         </UnorderedList>
 
-        <Heading mt={5}>Tahap Perkembangan</Heading>
+        <Heading mt={3} fontSize="2xl">Tahap Perkembangan</Heading>
         <UnorderedList>
           <ListItem>Berdiri sendiri tanpa berpegangan.</ListItem>
           <ListItem>
