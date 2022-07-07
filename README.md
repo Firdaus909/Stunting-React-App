@@ -6,7 +6,7 @@ MyStuntingApp is a web application made for parents to gather information about 
 
 - Display information about stunting.
 - Display information about immunization schedule.
-- Diagnose stunting according to children's gender, height and weight.
+- Diagnose stunting according to children's gender, age, height and weight.
 - Search for food nutrition.
 - Form validation.
 - Light/dark Theme.
