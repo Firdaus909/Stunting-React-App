@@ -8,7 +8,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
-import { FaPlus } from 'react-icons/fa';
+import { FaAngleRight } from 'react-icons/fa';
 // import { naturalNutrient } from '../service/services';
 
 interface Photo {
@@ -89,7 +89,7 @@ const FoodCard: React.FC<FoodProps> = ({
         <IconButton
           display={{ base: 'none', sm: 'flex' }}
           aria-label="Add Food"
-          icon={<FaPlus />}
+          icon={<FaAngleRight />}
           variant="ghost"
         />
       </Flex>
